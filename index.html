@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circulo de progresso</title>
+</head>
+<body>
+
+    <h1>Cristiano Aroxa</h1>
+    <input id="numberProgress" type="numbrer" placeholder="digite um número">
+    <button onclick="go()">Enviar</button>
+        <div class="box">
+            <div class="box-circle">
+                <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle id="circleProgress" cx="70" cy="70" r="70"></circle>
+                                
+                </svg>
+            </div>
+            <div class="number">
+            </div>
+        </div>
+    
+</body>
+<script>
+    function go()
+    {
+        var circle = document.querySelector('#circleProgress');
+        var number = document.querySelector('#numberProgress').value;
+        document.querySelector('.number').innerHTML = number + '%'
+        circle.style.strokeDashoffset = 440 - (440 * number)/100;
+    }
+</script>
+</html>
